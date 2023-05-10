@@ -5,25 +5,22 @@ import Form from '../molecules/Form/Form';
 import Page from '../pages/Page';
 import TodoList from '../organisms/TodoList/TodoList';
 import React from 'react';
-import PropTypes from 'prop-types';
 
 function App() {
   const [text, setText] = useState('');
   const [radio, setRadio] = useState(false);
-  const [ displayStyle, setDisplayStyle ] = useState(false);
   const dispatch = useDispatch();
 
   const handleAction = () => {
     if(text.trim().length) {
       dispatch(addTodo({text,radio}));
       setText('');
-      setDisplayStyle(true);
     }
   }
   const handleRadio = () => {
     setRadio(!radio);
     }
-    
+   
   return (
     <div className="container">
       <Page/>
@@ -34,8 +31,9 @@ function App() {
         handleRadio={handleRadio}
         handleAction={handleAction}
       />
-      <TodoList displayStyle={displayStyle}/>
+      <TodoList/>
     </div>
   );
 }
+
 export default App;

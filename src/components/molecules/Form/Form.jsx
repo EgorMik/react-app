@@ -1,6 +1,7 @@
 import React from 'react';
 import Input from '../../atoms/Input/Input'
 import Button from '../../atoms/Button/Button'
+import PropTypes from 'prop-types';
 
 const Form = ({ value, updateText, handleAction, radio, handleRadio }) => {
     return (
@@ -19,4 +20,11 @@ const Form = ({ value, updateText, handleAction, radio, handleRadio }) => {
         </div>
     );
   };
+  Form.propTypes = {
+    value: PropTypes.string,
+    updateText: PropTypes.func,
+    handleAction: PropTypes.func,
+    radio: PropTypes.bool,
+    handleRadio: PropTypes.func,
+  }
   export default Form;

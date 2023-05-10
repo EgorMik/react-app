@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import {toggleComplete, removeTodo} from '../../../store/todoSlice';
 import { Draggable } from 'react-beautiful-dnd';
+import PropTypes from 'prop-types';
 
 const Todo = ({ id, text, completed, index}) => {
   const dispatch = useDispatch();
@@ -27,4 +28,10 @@ const Todo = ({ id, text, completed, index}) => {
     </Draggable>
   );
 };
+Todo.propTypes = {
+  id: PropTypes.string,
+  text: PropTypes.string,
+  completed:PropTypes.bool,
+  index: PropTypes.number,
+}
 export default Todo;

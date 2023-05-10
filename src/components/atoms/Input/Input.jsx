@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Input = ({ value, updateText, radio, handleRadio}) => {
     return (
@@ -13,5 +14,10 @@ const Input = ({ value, updateText, radio, handleRadio}) => {
         </div>
     );
   };
-  
+  Input.propTypes = {
+    value: PropTypes.string,
+    updateText: PropTypes.func,
+    radio: PropTypes.bool,
+    handleRadio: PropTypes.func,
+  }
   export default Input;

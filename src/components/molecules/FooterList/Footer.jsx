@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { filterBy, filters, clearComplited } from '../../../store/todoSlice';
 
-const Footer= ({displayStyle })=> {
+const Footer= ()=> {
     const dispatch = useDispatch();
     const todos = useSelector(state => state.todos);
     return (
@@ -26,4 +26,5 @@ const Footer= ({displayStyle })=> {
       </div>
     );
   }
+ 
   export default Footer;

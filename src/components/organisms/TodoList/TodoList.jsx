@@ -5,8 +5,9 @@ import Todo from '../../molecules/Todo/Todo';
 import Footer from '../../molecules/FooterList/Footer';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import styles from './List.module.css';
+import PropTypes from 'prop-types';
 
-const TodoList = ({displayStyle}) =>{
+const TodoList = () =>{
     const todos = useSelector(state => state.todos.todos);
     const filter = useSelector((state) => state.todos.filterBy);
     const dispatch = useDispatch();
@@ -58,24 +59,25 @@ const TodoList = ({displayStyle}) =>{
       {(provided) => (
     <ul {...provided.droppableProps} ref={provided.innerRef} className="dodo-list">
         {filteredTodo().map((item,index) => (
-            
-                <Todo
-                    key={item.id}
-                    id={item.id}
-                    completed={item.completed}
-                    text ={item.text}
-                    index={index}
-                />
+          <Todo
+              key={item.id}
+              id={item.id}
+              completed={item.completed}
+              text ={item.text}
+              index={index}
+          />
         ))}
       {provided.placeholder}
     </ul>
     )}
     </Droppable>
     </DragDropContext>
-    
-      </div>
-      <Footer displayStyle={displayStyle}/>
-      </div>    
+    </div>
+      <Footer/>
+    </div>    
 );
 };
+TodoList.propTypes = {
+  displayStyle: PropTypes.bool,
+}
 export default TodoList;
