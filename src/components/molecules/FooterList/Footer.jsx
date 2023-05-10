@@ -3,16 +3,16 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { filterBy, filters, clearComplited } from '../../../store/todoSlice';
 
-const Footer= ({ key,displayStyle })=> {
+const Footer= ({displayStyle })=> {
     const dispatch = useDispatch();
     const todos = useSelector(state => state.todos);
     return (
-        <div className="footer" style={{display: displayStyle? 'grid': 'none'}}>
+        <div className="footer">
           <div className="left">
             <p>{Object.keys(todos.todos.filter(e=>e.completed === false)).length} items left</p>
             </div>
             <div className="middle">
-        <button onClick={() => dispatch(filterBy(filters.ALL))} >All</button>
+        <button onClick={() => dispatch(filterBy(filters.ALL))}>All</button>
         <button onClick={() => dispatch(filterBy(filters.COMPLETED))} >Completed</button>
         <button onClick={() => dispatch(filterBy(filters.NOT_COMPLETED))} >
           Active

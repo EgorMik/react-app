@@ -2,8 +2,10 @@ import {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../../store/todoSlice';
 import Form from '../molecules/Form/Form';
+import Page from '../pages/Page';
 import TodoList from '../organisms/TodoList/TodoList';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function App() {
   const [text, setText] = useState('');
@@ -24,6 +26,7 @@ function App() {
     
   return (
     <div className="container">
+      <Page/>
       <Form
         value={text}
         radio={radio}
@@ -32,7 +35,6 @@ function App() {
         handleAction={handleAction}
       />
       <TodoList displayStyle={displayStyle}/>
-      
     </div>
   );
 }

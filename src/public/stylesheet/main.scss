@@ -45,7 +45,6 @@ $width: 200;
     transform: $transforms;
 }
 
-// rotate
 @mixin rotate($deg) {
     @include transform(rotate(#{$deg}deg));
 }
@@ -56,7 +55,6 @@ body {
 
 .container {
     width: $h*60;
-    background: #fff;
     @include horizontal-center;
     margin-top: 10%;
     padding: $h;
@@ -94,8 +92,7 @@ body {
 .dodo-list {
     display: block;
     background: rgb(251, 251, 250); 
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
-    border: 1px solid $color;
+    
     border-radius: 5px;
     padding-left: 3px;
     @include clearfix;
@@ -113,6 +110,7 @@ body {
             @include border;
             float: left;
             margin-top: 13px;
+            margin-left: 2px;
         }
         em.selected {
             position: relative;
@@ -169,12 +167,15 @@ body {
 }
 
 .footer {
+    display:grid;
     width: 594px;
     grid-template-columns: 76px 163px 121px;
     align-items: start;
     justify-content: space-between;
     padding-top: 15px;
     padding-bottom: 15px;
+    padding-left: 5px;
+    z-index: 100;
     span {
         display: inline-block;
         @include border(1px, #3c9, solid);
@@ -191,7 +192,6 @@ body {
     p {
         float:left;
         margin: 0;
-        padding: 4px;
     }
 }
 
@@ -275,7 +275,34 @@ body {
     color:rgb(37, 37, 37);
     cursor: pointer;
 }
+
 .middle button:focus{
     color:rgb(7, 19, 146);
     cursor: pointer;
+}
+
+.middle button:active{
+    color:rgb(7, 19, 146);
+    cursor: pointer;
+}
+
+.list {
+    margin-top:13px;
+    width: 100%;
+    background-color: white;
+    border-radius: 0.8rem;
+    box-shadow: 1px 1rem 3rem 11px rgba(0, 0, 0, 0.2);
+}
+
+.page{
+    height: 60%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #3c9;
+    position: absolute;
+    z-index: -1;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
