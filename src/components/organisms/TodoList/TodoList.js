@@ -4,13 +4,13 @@ import { filters, dragAndDropSave } from '../../../store/todoSlice';
 import Todo from '../../molecules/Todo/Todo';
 import Footer from '../../molecules/FooterList/Footer';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-import styles from './List.module.css';
-import PropTypes from 'prop-types';
+import styles from './ToDoList.module.scss';
 
 const TodoList = () =>{
-    const todos = useSelector(state => state.todos.todos);
+    let todos = useSelector((state) => state.todos.todos);
     const filter = useSelector((state) => state.todos.filterBy);
     const dispatch = useDispatch();
+    
     const filteredTodo = () => {
       if(filter === filters.COMPLETED) {
         const newTodos = todos.filter(todo => todo.completed);
@@ -22,6 +22,7 @@ const TodoList = () =>{
       }
         return [...todos];
       };
+    
       const onDragEndHandler = (result) => {
         const { destination, source } = result;
         if (!destination) {
@@ -57,17 +58,17 @@ const TodoList = () =>{
       <DragDropContext onDragEnd={onDragEndHandler}>
       <Droppable droppableId="todos">
       {(provided) => (
-    <ul {...provided.droppableProps} ref={provided.innerRef} className="dodo-list">
-        {filteredTodo().map((item,index) => (
+    <ul {...provided.droppableProps} ref={provided.innerRef} className={styles["todo-list"]}>
+        {filteredTodo().map((value,index) => (
           <Todo
-              key={item.id}
-              id={item.id}
-              completed={item.completed}
-              text ={item.text}
-              index={index}
+            key={value.id}
+            id={value.id}
+            completed={value.completed}
+            text ={value.text}
+            index={index}
           />
         ))}
-      {provided.placeholder}
+    {provided.placeholder}
     </ul>
     )}
     </Droppable>
@@ -77,7 +78,5 @@ const TodoList = () =>{
     </div>    
 );
 };
-TodoList.propTypes = {
-  displayStyle: PropTypes.bool,
-}
+
 export default TodoList;

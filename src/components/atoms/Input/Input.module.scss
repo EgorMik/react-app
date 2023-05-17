@@ -1,0 +1,87 @@
+$h: 10px;
+$color: rgb(58, 59, 59);
+$width: 200;
+$gradient: linear-gradient(to right, rgb(95, 95, 223), rgb(211, 125, 225));
+@mixin boxSizing {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin rotate($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+@mixin border($borderWidth:1px,$borderColor:#d9d9d9,$borderStyle:solid) {
+    border: $borderWidth $borderColor $borderStyle;
+}
+
+.header {
+    padding: 10;
+    margin: 40;
+    border-radius: 0.8rem;
+    
+}
+
+.checkbox {
+    margin: 9px 4px;
+    position: absolute;
+    z-index: 100;
+    float:left;
+    appearance: none;
+    border: 0.5px solid #ccc;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-top:9px;
+}
+
+.checkbox:checked {
+    position: absolute;
+    border: 1px solid $gradient;
+    background: $gradient;
+    &:before {
+        display: block;
+        content: '';
+        width: 6px;
+        height: 2px;
+        background: white;
+        position: absolute;
+        left: 4.5px;
+        top: 10.6px;
+        @include rotate(45)
+    }
+    &:after {
+        display: block;
+        content: '';
+        width: 10px;
+        height: 2px;
+        background: white;
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        @include rotate(-45)
+    }
+}
+
+input[type=text] {
+    font-family: 'Josefin Sans', sans-serif;
+    height: $h*4;
+    @include border;
+    background: #fff;
+    width: $width*2+163+px;
+    padding: 0 5px;
+    border-radius: 0.8rem;
+    position: relative;
+    padding-left: 31px;
+}

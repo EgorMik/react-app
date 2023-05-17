@@ -1,0 +1,61 @@
+$gradient: linear-gradient(to right, rgb(95, 95, 223), rgb(211, 125, 225));
+@mixin verticalCenter($height:$h*4) {
+    height: $height;
+    line-height: $height;
+}
+
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin rotate($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+.deleteButton:hover{
+    color:grey;
+}
+.checkbox
+{
+    float:left;
+    appearance: none;
+    border: 0.5px solid #ccc;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-top:14px;
+}
+
+.checkbox:checked {
+    position: relative;
+    border: 1px solid $gradient;
+    background: $gradient;
+    &:before {
+        display: block;
+        content: '';
+        width: 6px;
+        height: 2px;
+        background: white;
+        position: absolute;
+        left: 4.5px;
+        top: 10.6px;
+        @include rotate(45)
+    }
+    &:after {
+        display: block;
+        content: '';
+        width: 10px;
+        height: 2px;
+        background: white;
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        @include rotate(-45)
+    }
+}

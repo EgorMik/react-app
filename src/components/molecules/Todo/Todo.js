@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import {toggleComplete, removeTodo} from '../../../store/todoSlice';
 import { Draggable } from 'react-beautiful-dnd';
 import PropTypes from 'prop-types';
+import styles from './Todo.module.scss';
 
 const Todo = ({ id, text, completed, index}) => {
   const dispatch = useDispatch();
@@ -14,15 +15,22 @@ const Todo = ({ id, text, completed, index}) => {
     {...provided.draggableProps}
     {...provided.dragHandleProps}
     ref={provided.innerRef}>
-        <em onClick={() => dispatch(toggleComplete({ id }))} className={completed ? 'selected' : null}></em>
-        <p  onClick={() => dispatch(toggleComplete({ id }))} style={{
-          textDecoration: completed
-          ? 'line-through'
-            : 'none', color: completed ? 'grey':'black'
-        }}>
-        {text}
+      <input 
+      type="checkbox" 
+      onClick={() => dispatch(toggleComplete({ id }))} 
+      onChange={() => {}} checked={completed}
+      className={styles.checkbox}/>
+     
+      <p  
+      onClick={() => dispatch(toggleComplete({ id }))} 
+      style={{textDecoration: completed ? 'line-through': 'none', 
+      color: completed ? 'grey':'black'
+      }}>
+      {text}
       </p>
-                <span onClick={() => dispatch(removeTodo({id}))}>X</span>
+      <span 
+      onClick={() => dispatch(removeTodo({id}))} 
+      className="deleteButton">x</span>
     </li>
     )}
     </Draggable>

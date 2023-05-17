@@ -1,0 +1,95 @@
+$color: rgb(58, 59, 59);
+$gradient: linear-gradient(to right, rgb(95, 95, 223), rgb(211, 125, 225));
+$grayColor: #333;
+$h: 10px;
+
+@mixin horizontal-center() {
+    margin: 0 auto;
+}
+
+@mixin clearfix {
+    &:after {
+        clear: both;
+        content: '.';
+        display: block;
+        height: 0;
+        line-height: 0;
+        overflow: hidden;
+    }
+    *height: 1%;
+}
+
+@mixin border($borderWidth:1px,$borderColor:#d9d9d9,$borderStyle:solid) {
+    border: $borderWidth $borderColor $borderStyle;
+}
+
+@mixin boxSizing {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+@mixin verticalCenter($height:$h*4) {
+    height: $height;
+    line-height: $height;
+}
+
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin rotate($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+
+
+.list_box ul {
+    list-style: none;
+  }
+  .list {
+    margin-top:13px;
+    width: 100%;
+    background-color: white;
+    border-radius: 0.8rem;
+    box-shadow: 1px 1rem 3rem 11px rgba(0, 0, 0, 0.2);
+}
+.todo-list {
+  display: block;
+  background: rgb(251, 251, 250); 
+  border-radius: 0.8rem;
+  padding-left: 3px;
+  @include clearfix;
+  li {
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid #d9d9d9;
+      width: 100%;
+      @include clearfix;
+      p {
+          float: left;
+          width: 84%;
+          padding-left: 2%;
+          @include verticalCenter(50px);
+          margin: 0;
+          cursor: pointer;
+          color: grey;
+      
+      }
+      
+      span {
+          width: 10%;
+          @include verticalCenter(50px);
+          text-align: right;
+          padding-right: 10px;
+          @include boxSizing;
+          font-size: 18px;
+          color: $color;
+          cursor: pointer;
+      }
+  }
+}

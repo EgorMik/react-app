@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should renders correctly 1`] = `
+<div
+  className="form"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="header"
+    >
+      <input
+        className="checkbox"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <input
+        className="input"
+        onChange={[Function]}
+        placeholder="Add your important task"
+        type="text"
+      />
+    </div>
+    <button
+      className="button"
+    >
+      Add todo
+    </button>
+  </form>
+</div>
+`;

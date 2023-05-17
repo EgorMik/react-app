@@ -1,0 +1,20 @@
+$gradient: linear-gradient(to right, rgb(95, 95, 223), rgb(211, 125, 225));
+.page{
+    height: 60%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: $gradient;
+    position: absolute;
+    z-index: -1;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    p{
+        width: 600px;
+        margin: 0 auto;
+        margin-top: 6%;
+        font-size: 26px;
+        color: white;
+    }
+}

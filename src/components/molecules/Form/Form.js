@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const Form = ({ value, updateText, handleAction, radio, handleRadio }) => {
     return (
-        <div className="inner">
+        <div className="form">
           <form onSubmit={e => {e.preventDefault();}}>
               <Input
                radio={radio}

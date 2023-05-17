@@ -1,0 +1,51 @@
+$color: rgb(58, 59, 59);
+$grayColor: #333;
+
+.footer {
+    display:grid;
+    width: 594px;
+    grid-template-columns: 76px 168px 124px;
+    align-items: start;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    z-index: 100;
+    span {
+        display: inline-block;
+        padding: 8px 10px;
+        margin: 0 5px;
+        border-radius: 3px;
+        color: $color;
+    }
+    a {
+        color: $grayColor;
+        text-decoration: none;
+        margin: 0 5px;
+    }
+    p {
+        float:left;
+        margin: 0;
+        color: rgb(145, 145, 145);
+    }
+}
+
+.active{
+    color:rgb(7, 19, 146);
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size:16px;
+    font-family: 'Josefin Sans', sans-serif;
+    &:hover { color:rgb(37, 37, 37);
+        cursor: pointer;}
+    }
+.unactive{
+    color: rgb(105, 105, 105);
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    &:hover { color:rgb(37, 37, 37);
+        cursor: pointer;}
+    }

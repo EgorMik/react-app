@@ -1,0 +1,15 @@
+$color: rgb(58, 59, 59);
+$h: 10px;
+.button {
+    height: $h*4+2;
+    border: none;
+    display:none;
+    background: $color;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 9px;
+    &:hover {
+        color: #fff;
+        background: rgba($color, 0.7);
+    }
+}

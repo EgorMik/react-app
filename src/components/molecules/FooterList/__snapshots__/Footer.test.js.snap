@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList should renders correctly 1`] = `
+<div
+  className="footer"
+>
+  <div>
+    <p>
+      0
+       items left
+    </p>
+  </div>
+  <div>
+    <button
+      className="unactive"
+      onClick={[Function]}
+    >
+      All
+    </button>
+    <button
+      className="unactive"
+      onClick={[Function]}
+    >
+      Completed
+    </button>
+    <button
+      className="unactive"
+      onClick={[Function]}
+    >
+      Active
+    </button>
+  </div>
+  <div>
+    <button
+      className="unactive"
+      onClick={[Function]}
+    >
+      Clear Compleated
+    </button>
+  </div>
+</div>
+`;

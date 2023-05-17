@@ -9,11 +9,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^10.12.8",
-    "immer": "^10.0.1",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
-    "react-dnd": "^16.0.1",
-    "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-scripts": "5.0.1",
@@ -49,14 +46,23 @@
     ]
   },
   "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^8.40.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "gh-pages": "^5.0.0",
+    "jest-enzyme": "^7.1.2",
+    "jest-watch-typeahead": "^0.6.5",
     "postcss-lit": "^1.1.0",
+    "react-test-renderer": "^18.2.0",
+    "redux-mock-store": "^1.5.4",
     "stylelint": "^15.6.1",
     "stylelint-config-standard": "^33.0.0"
-  }
+  },
+  "setupFiles": [
+    "<rootDir>/src/setupTests.js"
+  ]
 }

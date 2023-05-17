@@ -5,15 +5,21 @@ import Form from '../molecules/Form/Form';
 import Page from '../pages/Page';
 import TodoList from '../organisms/TodoList/TodoList';
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [text, setText] = useState('');
   const [radio, setRadio] = useState(false);
   const dispatch = useDispatch();
-
+  
   const handleAction = () => {
+    const newItem = {
+      id: uuidv4(),
+      text:text,
+      completed:radio,
+  };
     if(text.trim().length) {
-      dispatch(addTodo({text,radio}));
+      dispatch(addTodo(newItem));
       setText('');
     }
   }

@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList should renders correctly 1`] = `
+<div
+  className="list"
+>
+  <div
+    className="list_box"
+  >
+    <ul
+      className="todo-list"
+      data-rbd-droppable-context-id="0"
+      data-rbd-droppable-id="todos"
+    >
+      <li
+        aria-describedby="rbd-hidden-text-0-hidden-text-0"
+        data-rbd-drag-handle-context-id="0"
+        data-rbd-drag-handle-draggable-id="714ab407-82d7-4d96-ba8f-34c0f047acce"
+        data-rbd-draggable-context-id="0"
+        data-rbd-draggable-id="714ab407-82d7-4d96-ba8f-34c0f047acce"
+        draggable={false}
+        onDragStart={[Function]}
+        onTransitionEnd={null}
+        role="button"
+        style={
+          Object {
+            "transform": null,
+            "transition": null,
+          }
+        }
+        tabIndex={0}
+      >
+        <input
+          checked={true}
+          className="checkbox"
+          onChange={[Function]}
+          onClick={[Function]}
+          type="checkbox"
+        />
+        <p
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "grey",
+              "textDecoration": "line-through",
+            }
+          }
+        >
+          Complete online JavaScript course
+        </p>
+        <span
+          className="deleteButton"
+          onClick={[Function]}
+        >
+          x
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="footer"
+  >
+    <div>
+      <p>
+        0
+         items left
+      </p>
+    </div>
+    <div>
+      <button
+        className="unactive"
+        onClick={[Function]}
+      >
+        All
+      </button>
+      <button
+        className="unactive"
+        onClick={[Function]}
+      >
+        Completed
+      </button>
+      <button
+        className="unactive"
+        onClick={[Function]}
+      >
+        Active
+      </button>
+    </div>
+    <div>
+      <button
+        className="unactive"
+        onClick={[Function]}
+      >
+        Clear Compleated
+      </button>
+    </div>
+  </div>
+</div>
+`;
