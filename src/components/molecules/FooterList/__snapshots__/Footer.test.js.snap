@@ -12,7 +12,7 @@ exports[`TodoList should renders correctly 1`] = `
   </div>
   <div>
     <button
-      className="unactive"
+      className="active"
       onClick={[Function]}
     >
       All

@@ -53,7 +53,7 @@ const TodoList = () =>{
         dispatch(dragAndDropSave(todosUpdated));
       };
     return (
-      <div className="list">
+      <div className={styles.list}>
       <div className={styles.list_box}>
       <DragDropContext onDragEnd={onDragEndHandler}>
       <Droppable droppableId="todos">

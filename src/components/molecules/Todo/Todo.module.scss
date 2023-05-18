@@ -30,6 +30,18 @@ $gradient: linear-gradient(to right, rgb(95, 95, 223), rgb(211, 125, 225));
     cursor: pointer;
     position: relative;
     margin-top:14px;
+    &:hover{
+        float:left;
+        appearance: none;
+        border: 0.5px solid #6822b3;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        position: relative;
+        margin-top:14px; 
+    }
 }
 
 .checkbox:checked {
